@@ -2,6 +2,8 @@ package com.thinkconstructive.vratatwo.controller;
 
 import java.util.List;
 
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -12,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.thinkconstructive.vratatwo.model.CloudVendor;
+import com.thinkconstructive.vratatwo.response.ResponseHandler;
 import com.thinkconstructive.vratatwo.service.CloudVendorService;
 
 @RestController
@@ -36,10 +39,16 @@ public class CloudVendorController {
 		
 	}
 
+//	@GetMapping("{vendorID}")
+//	public CloudVendor getCloudVendorDetails(@PathVariable("vendorID") String vendorID) {
+//		return cloudVendorService.getCloudVendor(vendorID);			
+//	}
+	
 	@GetMapping("{vendorID}")
-	public CloudVendor getCloudVendorDetails(@PathVariable("vendorID") String vendorID) {
-		return cloudVendorService.getCloudVendor(vendorID);			
+	public ResponseEntity<Object> getCloudVendorDetails(@PathVariable("vendorID") String vendorID) {
+		return ResponseHandler.customResponse("Requested Vendor details", HttpStatus.OK, cloudVendorService.getCloudVendor(vendorID));
 	}
+	
 	
 	@GetMapping()
 	public List<CloudVendor> getAllCloudVendorDetails() {
