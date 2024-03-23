@@ -44,6 +44,7 @@ public class CloudVendorController {
 //		return cloudVendorService.getCloudVendor(vendorID);			
 //	}
 	
+	//code for custon response(compare with the above one)
 	@GetMapping("{vendorID}")
 	public ResponseEntity<Object> getCloudVendorDetails(@PathVariable("vendorID") String vendorID) {
 		return ResponseHandler.customResponse("Requested Vendor details", HttpStatus.OK, cloudVendorService.getCloudVendor(vendorID));
