@@ -31,7 +31,7 @@ public class CloudVendorServiceImplementation implements CloudVendorService{
 	@Override
 	public String updateCloudVendor(CloudVendor cloudVendor) {
 		cloudVendorRepository.save(cloudVendor);
-		return null;
+		return "success";
 	}
 
 	@Override
