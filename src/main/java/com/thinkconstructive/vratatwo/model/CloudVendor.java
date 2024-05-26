@@ -1,27 +1,23 @@
 package com.thinkconstructive.vratatwo.model;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name="cloud_vendor_info")
-public class CloudVendor {
-	
+@Table(name="cloud_vendor_info") 
+public class CloudVendor {	
 	@Id
+	// @GeneratedValue(strategy = GenerationType.AUTO)
 	private String vendorId;
 	private String vendorName;
 	private String vendorAddress;
-	private String vendorPhonenumber;
+	private String vendorPhonenumber;	
 	
-	
-	
-	public CloudVendor() {
-		
+	public CloudVendor() {		
 	}
-
-
-
 	public CloudVendor(String vendorId, String vendorName, String vendorAddress, String vendorPhonenumber) {
 		
 		this.vendorId = vendorId;

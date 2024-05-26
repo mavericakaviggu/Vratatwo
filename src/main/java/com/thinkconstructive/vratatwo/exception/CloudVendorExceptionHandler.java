@@ -16,9 +16,10 @@ public class CloudVendorExceptionHandler {
 		CloudVendorException cloudVendorException = new CloudVendorException(
 				cloudVendorNotFoundException.getMessage(),
 				cloudVendorNotFoundException.getCause(),
-				HttpStatus.NOT_FOUND
+				HttpStatus.NOT_FOUND //to show the error message in payload
+
 				); 
-		return new ResponseEntity<>(cloudVendorException, HttpStatus.NOT_FOUND);
+		return new ResponseEntity<>(cloudVendorException, HttpStatus.NOT_FOUND);//Here httpstatus is used to show error message in API call.
 	}
 
 }
