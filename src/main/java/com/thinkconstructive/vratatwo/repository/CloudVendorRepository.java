@@ -10,8 +10,10 @@ import com.thinkconstructive.vratatwo.model.CloudVendor;
 public interface CloudVendorRepository extends JpaRepository <CloudVendor, Integer>{
 	
 	//always remember that name of the method should be camel case of the name defined in entity class
-	List<CloudVendor> findByVendorName(String vendorName);
-	CloudVendor findByVendorPhonenumber(String vendorPhonenumber);
+	CloudVendor findByVendorName(String vendorName);
+	//the above method is used for JUNIT testing-> refer video tutorial no. 5 from think constructive
+	//try to implement the above one by returning list
+	//CloudVendor findByVendorPhonenumber(String vendorPhonenumber);
 	
 
 }

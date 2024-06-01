@@ -62,7 +62,7 @@ public class CloudVendorServiceImplementationTest{
         mock(CloudVendor.class);
         mock(CloudVendorRepository.class);        
         when(cloudVendorRepository.save(cloudVendor)).thenReturn(cloudVendor);
-        assertThat(cloudVendorService.updateCloudVendor(cloudVendor)).isEqualTo("success");     
+        assertThat(cloudVendorService.update(cloudVendor)).isEqualTo("success");     
     }
     // @Override
     // public String updateCloudVendor(CloudVendor cloudVendor) {

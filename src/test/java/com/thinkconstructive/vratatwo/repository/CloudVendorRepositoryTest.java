@@ -34,21 +34,18 @@ public class CloudVendorRepositoryTest {
 	//test case SUCCESS	
 	@Test
 	void testFindByVendorName_Found(){
-		List<CloudVendor> cloudVendorList = cloudVendorRepository.findByVendorName("Amazon");
-		assertThat(cloudVendorList.get(0).getVendorId()).isEqualTo(cloudVendor.getVendorId());
-		assertThat(cloudVendorList.get(0).getVendorAddress()).isEqualTo(cloudVendor.getVendorAddress());
+		CloudVendor cloudVendorList = cloudVendorRepository.findByVendorName("Amazon");
+		assertThat(cloudVendorList.getVendorId()).isEqualTo(cloudVendor.getVendorId());
+		assertThat(cloudVendorList.getVendorAddress()).isEqualTo(cloudVendor.getVendorAddress());
 	}
 	
 	//test case FAILURE
 	@Test
 	void testFindByVendorName_NotFound() {
-		List<CloudVendor> cloudVendorList = cloudVendorRepository.findByVendorName("vignesh");
-		assertThat(cloudVendorList.isEmpty()).isTrue();
+		CloudVendor cloudVendorList = cloudVendorRepository.findByVendorName("vignesh");
+		assertThat(cloudVendorList==null).isTrue();
 		
 	}
-	
-	
-	
 	
 
 }
