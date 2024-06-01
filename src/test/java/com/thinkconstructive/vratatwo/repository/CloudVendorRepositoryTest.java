@@ -21,7 +21,7 @@ public class CloudVendorRepositoryTest {
 			
 	@BeforeEach
 	void setUp() {
-		cloudVendor = new CloudVendor("1","Amazon","USA","1234");
+		cloudVendor = new CloudVendor("Amazon","USA","1234");
 		cloudVendorRepository.save(cloudVendor);
 	}
 	

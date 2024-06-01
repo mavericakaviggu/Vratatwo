@@ -32,8 +32,8 @@ public class CloudVendorControllerTest {
 
     @BeforeEach
     void setUp() {
-        cloudVendorOne = new CloudVendor("1", "Amazon", "USA", "1234");
-        cloudVendorTwo = new CloudVendor("2", "Googl", "UK", "5678");
+        cloudVendorOne = new CloudVendor("Amazon", "USA", "1234");
+        cloudVendorTwo = new CloudVendor("Google", "UK", "5678");
         cloudVendorList.add(cloudVendorOne);
         cloudVendorList.add(cloudVendorTwo);
     }
@@ -62,7 +62,7 @@ public class CloudVendorControllerTest {
 
     @Test
     void testGetCloudVendorDetails() throws Exception {
-        when(cloudVendorService.getCloudVendor("1")).thenReturn(cloudVendorOne);
+        when(cloudVendorService.getCloudVendor(1)).thenReturn(cloudVendorOne);
         this.mockMvc.perform(get("/cloudvendor/1")).andDo(print()).andExpect(status().isOk());
     }
     // @GetMapping("{vendorID}")

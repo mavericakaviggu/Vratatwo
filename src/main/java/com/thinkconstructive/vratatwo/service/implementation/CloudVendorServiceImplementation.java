@@ -13,9 +13,7 @@ import com.thinkconstructive.vratatwo.service.CloudVendorService;
 @Service
 public class CloudVendorServiceImplementation implements CloudVendorService{
 
-	CloudVendorRepository cloudVendorRepository;
-	
-	
+	CloudVendorRepository cloudVendorRepository;	
 	public CloudVendorServiceImplementation(CloudVendorRepository cloudVendorRepository) {
 		super();
 		this.cloudVendorRepository = cloudVendorRepository;
@@ -25,7 +23,6 @@ public class CloudVendorServiceImplementation implements CloudVendorService{
 	public String createCloudVendor(CloudVendor cloudVendor) {
 		cloudVendorRepository.save(cloudVendor);
 		return "success";
-		
 	}
 
 	@Override
@@ -35,7 +32,7 @@ public class CloudVendorServiceImplementation implements CloudVendorService{
 	}
 
 	@Override
-	public String deleteCloudVendor(String cloudVendorId) {
+	public String deleteCloudVendor(Integer cloudVendorId) {
 		cloudVendorRepository.deleteById(cloudVendorId);
 		return "success";
 	}
@@ -43,7 +40,7 @@ public class CloudVendorServiceImplementation implements CloudVendorService{
 	//adding get() as it returns optional
 
 	@Override
-	public CloudVendor getCloudVendor(String cloudVendorId) {
+	public CloudVendor getCloudVendor(Integer cloudVendorId) {
 		if(cloudVendorRepository.findById(cloudVendorId).isEmpty())
 			throw new CloudVendorNotFoundException("Requested cloud vendor doesnt exist");
 		return cloudVendorRepository.findById(cloudVendorId).orElseThrow(() -> new NoSuchElementException("No cloudvendor found with ID " + cloudVendorId));
