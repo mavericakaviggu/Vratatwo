@@ -45,7 +45,7 @@ public class CloudVendorController {
 	
 	//code for custon response(compare with the above one)
 	@GetMapping("{vendorID}")
-	public ResponseEntity<Object> getCloudVendorDetails(@PathVariable("vendorID") String vendorID) {
+	public ResponseEntity<Object> getCloudVendorDetails(@PathVariable("vendorID") Integer vendorID) {
 		return ResponseHandler.customResponse("Requested Vendor details", HttpStatus.OK, cloudVendorService.getCloudVendor(vendorID));
 	}
 	
@@ -63,7 +63,7 @@ public class CloudVendorController {
 	}
 	
 	@DeleteMapping("{vendorId}")
-	public String deleteCloudVendorDetails(@PathVariable("vendorId") String vendorId) {
+	public String deleteCloudVendorDetails(@PathVariable("vendorId") Integer vendorId) {
 		
 		cloudVendorService.deleteCloudVendor(vendorId);
 		return "cloud vendor deleted successfully";

@@ -10,70 +10,48 @@ import jakarta.persistence.Table;
 @Table(name="cloud_vendor_info") 
 public class CloudVendor {	
 	@Id
-	// @GeneratedValue(strategy = GenerationType.AUTO)
-	private String vendorId;
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private Integer vendorId;
 	private String vendorName;
 	private String vendorAddress;
 	private String vendorPhonenumber;	
 	
 	public CloudVendor() {		
 	}
-	public CloudVendor(String vendorId, String vendorName, String vendorAddress, String vendorPhonenumber) {
+	public CloudVendor(String vendorName, String vendorAddress, String vendorPhonenumber) {
 		
-		this.vendorId = vendorId;
 		this.vendorName = vendorName;
 		this.vendorAddress = vendorAddress;
 		this.vendorPhonenumber = vendorPhonenumber;
 	}
 	
 	
-	public String getVendorId() {
+	public Integer getVendorId() {
 		return vendorId;
 	}
-
-
-
-	public void setVendorId(String vendorId) {
+	public void setVendorId(Integer vendorId) {
 		this.vendorId = vendorId;
 	}
-
-
 
 	public String getVendorName() {
 		return vendorName;
 	}
-
-
-
 	public void setVendorName(String vendorName) {
 		this.vendorName = vendorName;
 	}
 
-
-
 	public String getVendorAddress() {
 		return vendorAddress;
 	}
-
-
-
 	public void setVendorAddress(String vendorAddress) {
 		this.vendorAddress = vendorAddress;
 	}
 
-
-
 	public String getVendorPhonenumber() {
 		return vendorPhonenumber;
 	}
-
-
-
 	public void setVendorPhonenumber(String vendorPhonenumber) {
 		this.vendorPhonenumber = vendorPhonenumber;
 	}
-
-
-
 
 }
